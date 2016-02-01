@@ -17,6 +17,7 @@ library(magrittr)
 options(stringsAsFactors = FALSE)
 
 # Download original data files
+# This will put the original files in working directory!
 www <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download(www, destfile = "har_data.zip")
 unzip("har_data.zip")
