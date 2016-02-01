@@ -127,11 +127,12 @@ part5_df <- ddply(part5_df, c("subject", "activity"),  numcolwise(mean))
 
 dim(part5_df) ## nb this could also be 68/88 cols, see part 2!!!!
 
-# House cleaning and writing to a tidy output -----------------------------
+re# House cleaning and writing to a tidy output -----------------------------
 
 rm(list = setdiff(ls(), grep("^part", ls(), value = TRUE)))
 
 dir.create("output")
 write.table(part5_df, "output/tidy.txt", row.names = FALSE, sep = "\t")
+
 
 save.image("output/get_and_clean_tidy.RData")
