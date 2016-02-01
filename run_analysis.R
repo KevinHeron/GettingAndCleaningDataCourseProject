@@ -14,10 +14,10 @@ library(downloader)
 library(plyr)
 library(magrittr)
 
+
 options(stringsAsFactors = FALSE)
 
 # Download original data files
-# This will put the original files in working directory!
 www <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download(www, destfile = "har_data.zip")
 unzip("har_data.zip")
@@ -55,10 +55,15 @@ dim(part1_df)
 
 part2_df <- part1_df
 
-wanted <- grep(".*Mean.*|.*Std.*|activity|subject",
-               names(part2_df), 
-               ignore.case=TRUE, 
-               value = TRUE)
+# wanted <- grep(".*Mean.*|.*Std.*|activity|subject", ## original.. after
+#                names(part2_df),                     ## reading "Dimensions of Tidy Data Set"
+#                ignore.case=TRUE,                    ## in discussions, opted to
+#                value = TRUE)                        ## go with mean() only.
+
+wanted <- grep(".*Mean\\(\\).*|.*Std.*|activity|subject",
+               names(part2_df),                    
+               ignore.case=TRUE,                   
+               value = TRUE)     
 
 part2_df <- part2_df[ , names(part2_df) %in% wanted]
 
@@ -112,18 +117,19 @@ names(part4_df)
 
 part5_df <- part4_df
 
-lapply(part5_df, class) %>% unlist %>% unname ## just eyeballing classes
+lapply(part5_df, class) %>% unlist %>% unname ## just eyebballing classes
+
 
 part5_df$subject %<>% as.factor
 part5_df$activity %<>% as.factor
 
 part5_df <- ddply(part5_df, c("subject", "activity"),  numcolwise(mean))
 
-dim(part5_df)
+dim(part5_df) ## nb this could also be 68/88 cols, see part 2!!!!
 
 # House cleaning and writing to a tidy output -----------------------------
 
-rm(list=setdiff(ls(), grep("^part", ls(), value = TRUE)))
+rm(list = setdiff(ls(), grep("^part", ls(), value = TRUE)))
 
 dir.create("output")
 write.table(part5_df, "output/tidy.txt", row.names = FALSE, sep = "\t")
