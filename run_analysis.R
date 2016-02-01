@@ -14,7 +14,6 @@ library(downloader)
 library(plyr)
 library(magrittr)
 
-
 options(stringsAsFactors = FALSE)
 
 # Download original data files
@@ -112,8 +111,7 @@ names(part4_df)
 
 part5_df <- part4_df
 
-lapply(part5_df, class) %>% unlist %>% unname ## just eyebballing classes
-
+lapply(part5_df, class) %>% unlist %>% unname ## just eyeballing classes
 
 part5_df$subject %<>% as.factor
 part5_df$activity %<>% as.factor
