@@ -91,3 +91,111 @@ The resultant dataset has a unique record for each subject and activity pair and
 each variable/field is distinct; hence, the `part5_df` is tidy. 
 
 `part5_df` is written to `output/tidy.txt` as a tab separated text file.
+
+`tidy.txt` Variables
+====================
+The `tidy.txt` variables are listed below. `subject` and `activity` refer to
+an individual and the activity being measured. For instance, subject 1 and 
+walking refer to measurements specific to subject one and walking.
+
+Outside of these fields, the variables have been averaged. 
+The capital letters `X`,`Y`, `Z` are directional indicators from a 3-axial
+signaler within a smartphone, which captured linear acceleration and
+angular velocity at a constant rate of 50Hz. 
+
+Sensor signals (accelerometer and gyroscope) were pre-processed by 
+applying noise filters and then sampled in fixed-width sliding windows
+of 2.56 sec and 50% overlap (128 readings/window). The gravitational force
+is assumed to have only low frequency components, therefore a filter with 
+0.3 Hz cutoff frequency was used. From each window, a vector of features
+ was obtained by calculating variables from the time and frequency domain.
+
+
+* "subject"                                      
+* "activity"                                     
+* "TimeBodyAccelerometerMeanX"                   
+* "TimeBodyAccelerometerMeanY"                   
+* "TimeBodyAccelerometerMeanZ"                   
+* "TimeBodyAccelerometerStdDevX"                 
+* "TimeBodyAccelerometerStdDevY"                 
+* "TimeBodyAccelerometerStdDevZ"                 
+* "TimeGravityAccelerometerMeanX"                
+* "TimeGravityAccelerometerMeanY"                
+* "TimeGravityAccelerometerMeanZ"                
+* "TimeGravityAccelerometerStdDevX"              
+* "TimeGravityAccelerometerStdDevY"              
+* "TimeGravityAccelerometerStdDevZ"              
+* "TimeBodyAccelerometerJerkMeanX"               
+* "TimeBodyAccelerometerJerkMeanY"               
+* "TimeBodyAccelerometerJerkMeanZ"               
+* "TimeBodyAccelerometerJerkStdDevX"             
+* "TimeBodyAccelerometerJerkStdDevY"             
+* "TimeBodyAccelerometerJerkStdDevZ"             
+* "TimeBodyGyroMeanX"                            
+* "TimeBodyGyroMeanY"                            
+* "TimeBodyGyroMeanZ"                            
+* "TimeBodyGyroStdDevX"                          
+* "TimeBodyGyroStdDevY"                          
+* "TimeBodyGyroStdDevZ"                          
+* "TimeBodyGyroJerkMeanX"                        
+* "TimeBodyGyroJerkMeanY"                        
+* "TimeBodyGyroJerkMeanZ"                        
+* "TimeBodyGyroJerkStdDevX"                      
+* "TimeBodyGyroJerkStdDevY"                      
+* "TimeBodyGyroJerkStdDevZ"                      
+* "TimeBodyAccelerometerMagMean"                 
+* "TimeBodyAccelerometerMagStdDev"               
+* "TimeGravityAccelerometerMagMean"              
+* "TimeGravityAccelerometerMagStdDev"            
+* "TimeBodyAccelerometerJerkMagMean"             
+* "TimeBodyAccelerometerJerkMagStdDev"           
+* "TimeBodyGyroMagMean"                          
+* "TimeBodyGyroMagStdDev"                        
+* "TimeBodyGyroJerkMagMean"                      
+* "TimeBodyGyroJerkMagStdDev"                    
+* "FreqBodyAccelerometerMeanX"                   
+* "FreqBodyAccelerometerMeanY"                   
+* "FreqBodyAccelerometerMeanZ"                   
+* "FreqBodyAccelerometerStdDevX"                 
+* "FreqBodyAccelerometerStdDevY"                 
+* "FreqBodyAccelerometerStdDevZ"                 
+* "FreqBodyAccelerometerMeanFreqX"               
+* "FreqBodyAccelerometerMeanFreqY"               
+* "FreqBodyAccelerometerMeanFreqZ"               
+* "FreqBodyAccelerometerJerkMeanX"               
+* "FreqBodyAccelerometerJerkMeanY"               
+* "FreqBodyAccelerometerJerkMeanZ"               
+* "FreqBodyAccelerometerJerkStdDevX"             
+* "FreqBodyAccelerometerJerkStdDevY"             
+* "FreqBodyAccelerometerJerkStdDevZ"             
+* "FreqBodyAccelerometerJerkMeanFreqX"           
+* "FreqBodyAccelerometerJerkMeanFreqY"           
+* "FreqBodyAccelerometerJerkMeanFreqZ"           
+* "FreqBodyGyroMeanX"                            
+* "FreqBodyGyroMeanY"                            
+* "FreqBodyGyroMeanZ"                            
+* "FreqBodyGyroStdDevX"                          
+* "FreqBodyGyroStdDevY"                          
+* "FreqBodyGyroStdDevZ"                          
+* "FreqBodyGyroMeanFreqX"                        
+* "FreqBodyGyroMeanFreqY"                        
+* "FreqBodyGyroMeanFreqZ"                        
+* "FreqBodyAccelerometerMagMean"                 
+* "FreqBodyAccelerometerMagStdDev"               
+* "FreqBodyAccelerometerMagMeanFreq"             
+* "FreqBodyBodyAccelerometerJerkMagMean"         
+* "FreqBodyBodyAccelerometerJerkMagStdDev"       
+* "FreqBodyBodyAccelerometerJerkMagMeanFreq"     
+* "FreqBodyBodyGyroMagMean"                      
+* "FreqBodyBodyGyroMagStdDev"                    
+* "FreqBodyBodyGyroMagMeanFreq"                  
+* "FreqBodyBodyGyroJerkMagMean"                  
+* "FreqBodyBodyGyroJerkMagStdDev"                
+* "FreqBodyBodyGyroJerkMagMeanFreq"              
+* "angleTimeBodyAccelerometerMeanGravity"        
+* "angleTimeBodyAccelerometerJerkMeanGravityMean"
+* "angleTimeBodyGyroMeanGravityMean"             
+* "angleTimeBodyGyroJerkMeanGravityMean"         
+* "angleXGravityMean"                            
+* "angleYGravityMean"                            
+* "angleZGravityMean"
